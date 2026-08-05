@@ -1,360 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Automation Intern | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Automation Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0a1128; /* Dark blue background */
+            --text-main: #e0e6ed;
+            --text-muted: #8b9bb4;
+            --accent-primary: #1282a2; /* Nature blue/teal accent */
+            --accent-secondary: #034078;
+            --card-bg: rgba(3, 64, 120, 0.2); /* Transparent dark blue */
+        }
 
-    :root {
-      --bg:        #04101b;
-      --surface:   #0a1929;
-      --card:      #112538;
-      --border:    #1e3a52;
-      --text:      #e2f0ed;
-      --muted:     #8faebd;
-      --accent:    #10b981;
-      --accent-lg: #34d399;
-      --glow:      rgba(16, 185, 129, .15);
-      --radius:    14px;
-    }
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-    html { scroll-behavior: smooth; }
+        /* Background setup for Mt. Fuji */
+        body {
+            /* Make sure mt-fuji.jpg is in the same folder as this HTML file */
+            background-image: linear-gradient(rgba(10, 17, 40, 0.85), rgba(10, 17, 40, 0.85)), url('mt-fuji.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(rgba(4, 16, 27, 0.85), rgba(4, 16, 27, 0.85)), url('mt-fuji.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
+        /* 3D Shards Container */
+        #shard-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
 
-    a { color: var(--accent-lg); text-decoration: none; transition: color .2s; }
-    a:hover { color: #6ee7b7; }
+        .shard {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(18, 130, 162, 0.2), rgba(3, 64, 120, 0.05));
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(18, 130, 162, 0.1);
+            animation: float 20s infinite linear;
+        }
 
-    .blob {
-      position: fixed;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(16, 185, 129, .12), transparent 70%);
-      filter: blur(90px);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .blob-1 { top: -150px; left: -100px; }
-    .blob-2 {
-      bottom: -200px; right: -150px;
-      background: radial-gradient(circle, rgba(14, 165, 233, .10), transparent 70%);
-    }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+        }
 
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 40px;
-      background: rgba(10, 10, 15, .75);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-    }
+        /* Layout styles */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .logo {
-      font-weight: 800; font-size: 1.2rem;
-      background: linear-gradient(135deg, var(--accent), var(--accent-lg));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
 
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { color: var(--muted); font-size: .92rem; font-weight: 500; transition: color .2s; }
-    .nav-links a:hover { color: var(--text); }
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
 
-    section {
-      position: relative; z-index: 1;
-      max-width: 960px; margin: 0 auto;
-      padding: 120px 24px 60px;
-    }
+        .highlight {
+            color: var(--accent-primary);
+        }
 
-    .section-label {
-      display: inline-block;
-      font-size: .75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--accent-lg);
-      margin-bottom: 12px;
-    }
+        p.subtitle {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
 
-    .section-title {
-      font-size: 2rem; font-weight: 800; line-height: 1.25;
-      margin-bottom: 28px;
-    }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
 
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center;
-      padding-top: 80px;
-    }
+        .btn-primary {
+            background-color: var(--accent-primary);
+            color: #fff;
+            border: 2px solid var(--accent-primary);
+        }
 
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 16px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: .82rem; color: var(--muted);
-      margin-bottom: 28px;
-      background: var(--surface);
-    }
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-primary);
+        }
 
-    .hero-badge span { color: var(--accent-lg); }
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
 
-    .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 800; line-height: 1.15;
-      margin-bottom: 20px;
-    }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--accent-secondary);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
 
-    .hero h1 .gradient {
-      background: linear-gradient(135deg, var(--accent), #38bdf8);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-    .hero p {
-      max-width: 560px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin-bottom: 36px;
-    }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(18, 130, 162, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
 
-    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+        }
 
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 28px;
-      border-radius: 10px;
-      font-size: .95rem; font-weight: 600;
-      border: none; cursor: pointer;
-      transition: transform .15s, box-shadow .25s;
-    }
-    .btn:hover { transform: translateY(-2px); }
+        .tags span {
+            background-color: var(--accent-secondary);
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            display: inline-block;
+            margin-top: 15px;
+        }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #6341e0);
-      color: #fff;
-      box-shadow: 0 4px 24px var(--glow);
-    }
-    .btn-primary:hover { box-shadow: 0 6px 32px rgba(124,92,252,.3); color: #fff; }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent-lg); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    .about-text { color: var(--muted); font-size: 1rem; }
-    .about-text p + p { margin-top: 16px; }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .skill-chip {
-      display: flex; align-items: center; gap: 10px;
-      padding: 14px 18px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: .88rem; font-weight: 500;
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .skill-chip:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 20px var(--glow);
-    }
-
-    .skill-icon {
-      width: 34px; height: 34px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 8px;
-      font-size: 1rem;
-      background: rgba(124, 92, 252, .12);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      transition: transform .2s, border-color .25s, box-shadow .25s;
-    }
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-      box-shadow: 0 8px 32px var(--glow);
-    }
-
-    .project-tag {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: .72rem; font-weight: 600; letter-spacing: .5px;
-      margin-bottom: 16px;
-    }
-    .tag-python  { background: rgba(56,189,248,.12); color: #38bdf8; }
-    .tag-ai      { background: rgba(124,92,252,.12); color: var(--accent-lg); }
-    .tag-automate{ background: rgba(52,211,153,.12); color: #34d399; }
-
-    .project-card h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 10px; }
-    .project-card p  { color: var(--muted); font-size: .9rem; margin-bottom: 18px; }
-
-    .project-link { font-size: .85rem; font-weight: 600; color: var(--accent-lg); }
-    .project-link:hover { text-decoration: underline; }
-
-    .contact-wrapper {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 48px;
-      text-align: center;
-    }
-
-    .contact-wrapper p { color: var(--muted); max-width: 480px; margin: 0 auto 32px; }
-
-    .contact-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    .contact-form .full { grid-column: 1 / -1; }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 14px 18px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: .92rem;
-      outline: none;
-      transition: border-color .2s;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus { border-color: var(--accent); }
-
-    .contact-form textarea { resize: vertical; min-height: 120px; }
-
-    .contact-form .btn-primary { justify-self: center; grid-column: 1 / -1; }
-
-    .socials {
-      display: flex; gap: 16px; justify-content: center;
-      margin-top: 32px;
-    }
-
-    .social-link {
-      width: 44px; height: 44px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 1.1rem;
-      transition: border-color .2s, color .2s;
-    }
-    .social-link:hover { border-color: var(--accent); color: var(--accent-lg); }
-
-    footer {
-      position: relative; z-index: 1;
-      text-align: center;
-      padding: 40px 24px;
-      font-size: .82rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 14px 20px; }
-      .nav-links { gap: 20px; }
-      .about-grid { grid-template-columns: 1fr; }
-      .contact-form { grid-template-columns: 1fr; }
-      section { padding: 100px 20px 40px; }
-    }
-
-    @media (max-width: 480px) {
-      .nav-links { display: none; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2rem; }
-    }
-
-    /* 3D Shards Background */
-    #shard-container {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .shard {
-      position: absolute;
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.4), rgba(14, 165, 233, 0.1));
-      backdrop-filter: blur(2px);
-      clip-path: polygon(50% 0%, 100% 25%, 80% 90%, 10% 100%, 0% 40%);
-      animation: float-shard infinite linear;
-    }
-
-    @keyframes float-shard {
-      0% { transform: translateY(110vh) rotate3d(1, 1, 1, 0deg); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-20vh) rotate3d(1, 1, 1, 360deg); opacity: 0; }
-    }
-  </style>
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Background Shards Container -->
-  <div id="shard-container"></div>
+    <!-- This is where the animated 3D shards live -->
+    <div id="shard-container"></div>
 
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
+    <div class="container">
+        <!-- Hero Section -->
+        <header>
+            <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+            <p class="subtitle">Aspiring AI Automation Intern | Building systems that work smarter, not harder.</p>
+            <div>
+                <a href="#projects" class="btn btn-primary">View My Projects ↓</a>
+            </div>
+        </header>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">&lt;/AI&gt;</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am passionate about leveraging artificial intelligence to streamline workflows and solve complex problems. My goal is to help businesses automate repetitive tasks so they can focus on what truly matters.</p>
+            <p>I have experience with Prompt Engineering, Python, and integrating AI APIs to create intelligent automation systems.</p>
+        </section>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-badge">🤖 <span>Open to Internship Opportunities</span></div>
-    <h1>Hi, I'm <span class="gradient">NG ZI LE</span>.<br/>I am a frontend developer.</h1>
-    <p>Aspiring AI Automation specialist passionate about streamlining workflows, prompt engineering, and building intelligent solutions that save time and effort.</p>
-    <div class="hero-buttons">
-      <a href="#projects" class="btn btn-primary">View My Projects ↓</a>
-      
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Automated Email Assistant</h3>
+                    <p>Built a system using Python and the OpenAI API that reads incoming emails, categorizes them, and drafts suggested replies based on context.</p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>OpenAI API</span>
+                        <span>Automation</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Data Extraction Bot</h3>
+                    <p>Created a web scraper combined with LLM processing to automatically extract structured data (like pricing and features) from unstructured competitor websites.</p>
+                    <div class="tags">
+                        <span>Prompt Engineering</span>
+                        <span>Scraping</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <p>I'm currently looking for an AI Automation Internship and would love to chat.</p>
+            <p>Email me at: <a href="mailto:your.email@example.com" class="highlight">your.email@example.com</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Your Name. Built with AI & Automation in mind.</p>
+    </footer>
+
+    <!-- JavaScript for 3D Shards -->
+    <script>
+        function createShards() {
+            const container = document.getElementById('shard-container');
+            const shardCount = 15; // Number of shards floating around
+
+            for (let i = 0; i < shardCount; i++) {
+                const shard = document.createElement('div');
+                shard.classList.add('shard');
+                
+                // Randomize size, position, and animation timing
+                const size = Math.random() * 100 + 50; // Between 50px and 150px
+                shard.style.width = `${size}px`;
+                shard.style.height = `${size}px`;
+                shard.style.left = `${Math.random() * 100}vw`;
+                
+                // Randomize shape using clip-path to look like broken glass/shards
+                const clipPath = `polygon(
+                    ${Math.random() * 50}% 0%, 
+                    100% ${Math.random() * 50}%, 
+                    ${50 + Math.random() * 50}% 100%, 
+                    0% ${50 + Math.random() * 50}%
+                )`;
+                shard.style.clipPath = clipPath;
+
+                shard.style.animationDuration = `${Math.random() * 15 + 15}s`; // 15s to 30s
+                shard.style.animationDelay = `${Math.random() * 10}s`;
+
+                container.appendChild(shard);
+            }
+        }
+
+        // Initialize shards when page loads
+        window.onload = createShards;
+    </script>
+</body>
+</html>
