@@ -25,16 +25,15 @@
 
     html { scroll-behavior: smooth; }
 
-       body {
+    body {
       font-family: 'Inter', sans-serif;
-      /* Add the dark overlay and the background image here */
+      /* Dark overlay with your Mt. Fuji background */
       background: linear-gradient(rgba(4, 16, 27, 0.85), rgba(4, 16, 27, 0.85)), url('mt-fuji.jpg') no-repeat center center fixed;
       background-size: cover;
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
     }
-
 
     a { color: var(--accent-lg); text-decoration: none; transition: color .2s; }
     a:hover { color: #6ee7b7; }
@@ -53,7 +52,6 @@
       bottom: -200px; right: -150px; 
       background: radial-gradient(circle, rgba(14, 165, 233, .10), transparent 70%); 
     }
-
 
     nav {
       position: fixed; top: 0; left: 0; right: 0;
@@ -106,86 +104,4 @@
       border: 1px solid var(--border);
       border-radius: 999px;
       font-size: .82rem; color: var(--muted);
-      margin-bottom: 28px;
-      background: var(--surface);
-    }
-
-    .hero-badge span { color: var(--accent-lg); }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 800; line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 .gradient {
-      background: linear-gradient(135deg, var(--accent), #38bdf8);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      max-width: 560px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin-bottom: 36px;
-    }
-
-    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 28px;
-      border-radius: 10px;
-      font-size: .95rem; font-weight: 600;
-      border: none; cursor: pointer;
-      transition: transform .15s, box-shadow .25s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #6341e0);
-      color: #fff;
-      box-shadow: 0 4px 24px var(--glow);
-    }
-    .btn-primary:hover { box-shadow: 0 6px 32px rgba(124,92,252,.3); color: #fff; }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent-lg); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    .about-text { color: var(--muted); font-size: 1rem; }
-    .about-text p + p { margin-top: 16px; }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .skill-chip {
-      display: flex; align-items: center; gap: 10px;
-      padding: 14px 18px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: .88rem; font-weight: 500;
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .skill-chip:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 20px var(--glow);
-    }
-
-    .skill-icon {
-      width: 34px; height: 34px;
-      display: flex; align-items: center; justify-content: c
+      margin
