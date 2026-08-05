@@ -27,6 +27,8 @@
     html { scroll-behavior: smooth; }
 
     body {
+      <div id="shard-container"></div>
+
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
@@ -306,6 +308,42 @@
       .skills-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2rem; }
     }
+
+
+        /* 3D Shards Background */
+    #shard-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1; /* Keeps it behind your content */
+      overflow: hidden;
+      pointer-events: none; /* Allows clicking through the shards */
+    }
+
+    .shard {
+      position: absolute;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.4), rgba(14, 165, 233, 0.1));
+      backdrop-filter: blur(2px);
+      /* This creates the jagged crystal/shard shape */
+      clip-path: polygon(50% 0%, 100% 25%, 80% 90%, 10% 100%, 0% 40%);
+      animation: float-shard infinite linear;
+    }
+
+    @keyframes float-shard {
+      0% {
+        transform: translateY(110vh) rotate3d(1, 1, 1, 0deg);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% {
+        transform: translateY(-20vh) rotate3d(1, 1, 1, 360deg);
+        opacity: 0;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -412,6 +450,33 @@
   <footer>
     <p>© 2026 Your Name · Built with AI 🤖</p>
   </footer>
+  <script>
+    const container = document.getElementById('shard-container');
+    const numberOfShards = 25; /* Change this number for more or fewer shards */
+
+    for (let i = 0; i < numberOfShards; i++) {
+      const shard = document.createElement('div');
+      shard.classList.add('shard');
+      
+      // Randomize size between 20px and 80px
+      const size = Math.random() * 60 + 20;
+      shard.style.width = `${size}px`;
+      shard.style.height = `${size * 1.5}px`; /* Make them slightly taller than wide */
+      
+      // Randomize starting position across the screen
+      shard.style.left = `${Math.random() * 100}vw`;
+      
+      // Randomize animation speed (between 10s and 25s) and delay
+      const duration = Math.random() * 15 + 10;
+      const delay = Math.random() * -20; /* Negative delay so they are on screen immediately */
+      
+      shard.style.animationDuration = `${duration}s`;
+      shard.style.animationDelay = `${delay}s`;
+      
+      container.appendChild(shard);
+    }
+  </script>
+</body>
 
 </body>
 </html>
