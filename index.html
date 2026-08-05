@@ -10,16 +10,16 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --bg:        #0a0a0f;
-      --surface:   #12121a;
-      --card:      #1a1a26;
-      --border:    #2a2a3a;
-      --text:      #e2e2e8;
-      --muted:     #9191a8;
-      --accent:    #7c5cfc;
-      --accent-lg: #a78bfa;
-      --glow:      rgba(124, 92, 252, .15);
+        :root {
+      --bg:        #04101b; /* Deep dark ocean blue */
+      --surface:   #0a1929; /* Dark blue surface */
+      --card:      #112538; /* Slightly lighter blue for cards */
+      --border:    #1e3a52; /* Blue border */
+      --text:      #e2f0ed; /* Soft minty white */
+      --muted:     #8faebd; /* Muted blue-grey */
+      --accent:    #10b981; /* Emerald/Nature green */
+      --accent-lg: #34d399; /* Lighter mint green */
+      --glow:      rgba(16, 185, 129, .15); /* Green glow effect */
       --radius:    14px;
     }
 
@@ -34,19 +34,25 @@
     }
 
     a { color: var(--accent-lg); text-decoration: none; transition: color .2s; }
-    a:hover { color: #c4b5fd; }
+    a:hover { color: #6ee7b7; }
 
     .blob {
       position: fixed;
       width: 600px; height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(124,92,252,.12), transparent 70%);
+      /* Deep forest green gradient for the main blob */
+      background: radial-gradient(circle, rgba(16, 185, 129, .12), transparent 70%);
       filter: blur(90px);
       pointer-events: none;
       z-index: 0;
     }
     .blob-1 { top: -150px; left: -100px; }
-    .blob-2 { bottom: -200px; right: -150px; background: radial-gradient(circle, rgba(56,189,248,.08), transparent 70%); }
+    .blob-2 { 
+      bottom: -200px; right: -150px; 
+      /* Ocean blue gradient for the secondary blob */
+      background: radial-gradient(circle, rgba(14, 165, 233, .10), transparent 70%); 
+    }
+
 
     nav {
       position: fixed; top: 0; left: 0; right: 0;
