@@ -27,9 +27,13 @@
 
    body {
       font-family: 'Inter', sans-serif;
-      /* Add the dark overlay and the background image here */
-      background: linear-gradient(rgba(4, 16, 27, 0.85), rgba(4, 16, 27, 0.85)), url('mt-fuji.jpg') no-repeat center center fixed;
+      /* Separated background properties for better browser support */
+      background-image: linear-gradient(rgba(4, 16, 27, 0.85), rgba(4, 16, 27, 0.85)), url('mt-fuji.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       background-size: cover;
+      
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
