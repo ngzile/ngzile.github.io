@@ -25,13 +25,16 @@
 
     html { scroll-behavior: smooth; }
 
-    body {
+       body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      /* Add the dark overlay and the background image here */
+      background: linear-gradient(rgba(4, 16, 27, 0.85), rgba(4, 16, 27, 0.85)), url('mt-fuji.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
     }
+
 
     a { color: var(--accent-lg); text-decoration: none; transition: color .2s; }
     a:hover { color: #6ee7b7; }
