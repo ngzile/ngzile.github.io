@@ -10,16 +10,17 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
-      --bg:        #04101b; /* Deep dark ocean blue */
-      --surface:   #0a1929; /* Dark blue surface */
-      --card:      #112538; /* Slightly lighter blue for cards */
-      --border:    #1e3a52; /* Blue border */
-      --text:      #e2f0ed; /* Soft minty white */
-      --muted:     #8faebd; /* Muted blue-grey */
-      --accent:    #10b981; /* Emerald/Nature green */
-      --accent-lg: #34d399; /* Lighter mint green */
-      --glow:      rgba(16, 185, 129, .15); /* Green glow effect */
+       
+      :root {
+      --bg:        #04101b; 
+      --surface:   #0a1929; 
+      --card:      #112538; 
+      --border:    #1e3a52; 
+      --text:      #e2f0ed; 
+      --muted:     #8faebd; 
+      --accent:    #10b981; 
+      --accent-lg: #34d399; 
+      --glow:      rgba(16, 185, 129, .15); 
       --radius:    14px;
     }
 
@@ -40,7 +41,6 @@
       position: fixed;
       width: 600px; height: 600px;
       border-radius: 50%;
-      /* Deep forest green gradient for the main blob */
       background: radial-gradient(circle, rgba(16, 185, 129, .12), transparent 70%);
       filter: blur(90px);
       pointer-events: none;
@@ -49,7 +49,6 @@
     .blob-1 { top: -150px; left: -100px; }
     .blob-2 { 
       bottom: -200px; right: -150px; 
-      /* Ocean blue gradient for the secondary blob */
       background: radial-gradient(circle, rgba(14, 165, 233, .10), transparent 70%); 
     }
 
