@@ -41,13 +41,9 @@
     a:hover { color: #bdd8ff; }
 
     .blob {
-      position: fixed;
-      width: 600px; height: 600px;
-      border-radius: 50%;
+      position: fixed; width: 600px; height: 600px; border-radius: 50%;
       background: radial-gradient(circle, rgba(74, 158, 255, .10), transparent 70%);
-      filter: blur(90px);
-      pointer-events: none;
-      z-index: 0;
+      filter: blur(90px); pointer-events: none; z-index: 0;
     }
     .blob-1 { top: -150px; left: -100px; }
     .blob-2 {
@@ -84,145 +80,82 @@
     .section-label {
       display: inline-block;
       font-size: .75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--accent-lg);
-      margin-bottom: 12px;
+      color: var(--accent-lg); margin-bottom: 12px;
     }
 
     .section-title {
       font-size: 2rem; font-weight: 800; line-height: 1.25;
-      margin-bottom: 28px;
-      color: #ffffff;
+      margin-bottom: 28px; color: #ffffff;
     }
 
     .hero {
       min-height: 100vh;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center;
-      padding-top: 80px;
+      text-align: center; padding-top: 80px;
     }
 
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 16px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: .82rem; color: var(--muted);
-      margin-bottom: 28px;
-      background: var(--surface);
+      padding: 6px 16px; border: 1px solid var(--border); border-radius: 999px;
+      font-size: .82rem; color: var(--muted); margin-bottom: 28px; background: var(--surface);
     }
-
     .hero-badge span { color: var(--accent-lg); }
 
     .hero h1 {
       font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 800; line-height: 1.15;
-      margin-bottom: 20px;
-      color: #ffffff;
+      font-weight: 800; line-height: 1.15; margin-bottom: 20px; color: #ffffff;
     }
-
     .hero h1 .gradient {
       background: linear-gradient(135deg, #4a9eff, #a78bfa);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-
-    .hero p {
-      max-width: 560px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin-bottom: 36px;
-    }
-
+    .hero p { max-width: 560px; color: var(--muted); font-size: 1.08rem; margin-bottom: 36px; }
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 28px;
-      border-radius: 10px;
-      font-size: .95rem; font-weight: 600;
-      border: none; cursor: pointer;
-      transition: transform .15s, box-shadow .25s;
+      padding: 13px 28px; border-radius: 10px; font-size: .95rem; font-weight: 600;
+      border: none; cursor: pointer; transition: transform .15s, box-shadow .25s;
     }
     .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
       background: linear-gradient(135deg, #4a9eff, #6366f1);
-      color: #fff;
-      box-shadow: 0 4px 24px var(--glow);
+      color: #fff; box-shadow: 0 4px 24px var(--glow);
     }
     .btn-primary:hover { box-shadow: 0 6px 32px rgba(99, 102, 241, .35); color: #fff; }
 
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent-lg); }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
     .about-text { color: var(--muted); font-size: 1rem; }
     .about-text p + p { margin-top: 16px; }
     .about-text strong { color: #ffffff; }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .skill-chip {
       display: flex; align-items: center; gap: 10px;
-      padding: 14px 18px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: .88rem; font-weight: 500;
-      color: #ffffff;
+      padding: 14px 18px; background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); font-size: .88rem; font-weight: 500; color: #ffffff;
       transition: border-color .2s, box-shadow .2s;
     }
-    .skill-chip:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 20px var(--glow);
-    }
-
+    .skill-chip:hover { border-color: var(--accent); box-shadow: 0 0 20px var(--glow); }
     .skill-icon {
-      width: 34px; height: 34px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 8px;
-      font-size: 1rem;
-      background: rgba(74, 158, 255, .12);
+      width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+      border-radius: 8px; font-size: 1rem; background: rgba(74, 158, 255, .12);
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
     .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      transition: transform .2s, border-color .25s, box-shadow .25s;
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 28px; transition: transform .2s, border-color .25s, box-shadow .25s;
     }
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-      box-shadow: 0 8px 32px var(--glow);
-    }
+    .project-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 8px 32px var(--glow); }
 
     .project-tag {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: .72rem; font-weight: 600; letter-spacing: .5px;
-      margin-bottom: 16px;
+      display: inline-block; padding: 4px 12px; border-radius: 999px;
+      font-size: .72rem; font-weight: 600; letter-spacing: .5px; margin-bottom: 16px;
     }
     .tag-python  { background: rgba(56, 189, 248, .12); color: #38bdf8; }
     .tag-ai      { background: rgba(99, 102, 241, .12); color: #a78bfa; }
@@ -230,73 +163,42 @@
 
     .project-card h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
     .project-card p  { color: var(--muted); font-size: .9rem; margin-bottom: 18px; }
-
     .project-link { font-size: .85rem; font-weight: 600; color: var(--accent-lg); }
     .project-link:hover { text-decoration: underline; }
 
     .contact-wrapper {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 48px;
-      text-align: center;
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 48px; text-align: center;
     }
-
     .contact-wrapper p { color: var(--muted); max-width: 480px; margin: 0 auto 32px; }
 
     .contact-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      max-width: 560px;
-      margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      max-width: 560px; margin: 0 auto;
     }
-
     .contact-form .full { grid-column: 1 / -1; }
-
     .contact-form input,
     .contact-form textarea {
-      width: 100%;
-      padding: 14px 18px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: .92rem;
-      outline: none;
-      transition: border-color .2s;
+      width: 100%; padding: 14px 18px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 10px; color: var(--text);
+      font-family: 'Inter', sans-serif; font-size: .92rem; outline: none; transition: border-color .2s;
     }
     .contact-form input:focus,
     .contact-form textarea:focus { border-color: var(--accent); }
-
     .contact-form textarea { resize: vertical; min-height: 120px; }
-
     .contact-form .btn-primary { justify-self: center; grid-column: 1 / -1; }
 
-    .socials {
-      display: flex; gap: 16px; justify-content: center;
-      margin-top: 32px;
-    }
-
+    .socials { display: flex; gap: 16px; justify-content: center; margin-top: 32px; }
     .social-link {
-      width: 44px; height: 44px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 1.1rem;
-      transition: border-color .2s, color .2s;
+      width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+      border-radius: 10px; border: 1px solid var(--border); color: var(--muted);
+      font-size: 1.1rem; transition: border-color .2s, color .2s;
     }
     .social-link:hover { border-color: var(--accent); color: var(--accent-lg); }
 
     footer {
-      position: relative; z-index: 1;
-      text-align: center;
-      padding: 40px 24px;
-      font-size: .82rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
+      position: relative; z-index: 1; text-align: center; padding: 40px 24px;
+      font-size: .82rem; color: var(--muted); border-top: 1px solid var(--border);
     }
 
     @media (max-width: 768px) {
@@ -306,25 +208,16 @@
       .contact-form { grid-template-columns: 1fr; }
       section { padding: 100px 20px 40px; }
     }
-
     @media (max-width: 480px) {
       .nav-links { display: none; }
       .skills-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2rem; }
     }
 
-    /* 3D Shards Background */
     #shard-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: -1; overflow: hidden; pointer-events: none;
     }
-
     .shard {
       position: absolute;
       background: linear-gradient(135deg, rgba(74, 158, 255, 0.3), rgba(99, 102, 241, 0.1));
@@ -332,26 +225,147 @@
       clip-path: polygon(50% 0%, 100% 25%, 80% 90%, 10% 100%, 0% 40%);
       animation: float-shard infinite linear;
     }
-
     @keyframes float-shard {
-      0% {
-        transform: translateY(110vh) rotate3d(1, 1, 1, 0deg);
-        opacity: 0;
-      }
+      0% { transform: translateY(110vh) rotate3d(1, 1, 1, 0deg); opacity: 0; }
       10% { opacity: 1; }
       90% { opacity: 1; }
-      100% {
-        transform: translateY(-20vh) rotate3d(1, 1, 1, 360deg);
-        opacity: 0;
-      }
+      100% { transform: translateY(-20vh) rotate3d(1, 1, 1, 360deg); opacity: 0; }
     }
-
   </style>
 </head>
 <body>
+  <div id="shard-container"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
 
-  
+  <nav>
+    <div class="logo">&lt;/AI&gt;</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
+  <section class="hero">
+    <div class="hero-badge">🤖 <span>Open to Internship Opportunities</span></div>
+    <h1>Hi, I'm <span class="gradient">NG ZI LE</span>.<br/>I am a frontend developer.</h1>
+    <p>Aspiring AI Automation specialist passionate about streamlining workflows, prompt engineering, and building intelligent solutions that save time and effort.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">View My Projects ↓</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </section>
 
+  <section id="about">
+    <span class="section-label">About Me</span>
+    <h2 class="section-title">Problem-solver and analytical-thinker</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a motivated and curious learner with a passion for discovering how things work under the hood. My journey into AI automation started with a desire to eliminate repetitive tasks and has grown into a deep interest in prompt engineering and LLM orchestration.</p>
+        <p>Currently seeking an <strong>AI Automation Internship</strong> where I can apply my skills in Python, APIs, and AI models to solve real-world business problems and learn from experienced professionals.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-chip">
+          <div class="skill-icon">🐍</div>
+          <span>Python & Scripting</span>
+        </div>
+        <div class="skill-chip">
+          <div class="skill-icon">🤖</div>
+          <span>Prompt Engineering</span>
+        </div>
+        <div class="skill-chip">
+          <div class="skill-icon">⚡</div>
+          <span>API Integration</span>
+        </div>
+        <div class="skill-chip">
+          <div class="skill-icon">⚙️</div>
+          <span>Workflow Automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="projects">
+    <span class="section-label">My Work</span>
+    <h2 class="section-title">Recent Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <span class="project-tag tag-python">Python</span>
+        <h3>Email Auto-Categorizer</h3>
+        <p>A script that uses OpenAI's API to read incoming emails, categorize them by urgency, and draft suggested replies based on context.</p>
+        <a href="#" class="project-link">View on GitHub →</a>
+      </div>
+      <div class="project-card">
+        <span class="project-tag tag-ai">AI Agents</span>
+        <h3>Research Summarizer Bot</h3>
+        <p>A Discord bot built to take URLs of long articles, scrape the text, and return a concise, bulleted summary using an LLM.</p>
+        <a href="#" class="project-link">View on GitHub →</a>
+      </div>
+      <div class="project-card">
+        <span class="project-tag tag-automate">Zapier / Make</span>
+        <h3>Lead Generation Pipeline</h3>
+        <p>Automated workflow connecting a Typeform to a Google Sheet, triggering an automatic personalized welcome email and Slack notification.</p>
+        <a href="#" class="project-link">View on GitHub →</a>
+      </div>
+    </div>
+  </section>
 
+  <section id="contact">
+    <span class="section-label">Contact</span>
+    <h2 class="section-title">Let's connect</h2>
+    <div class="contact-wrapper">
+      <p>I am actively looking for internship opportunities starting soon. If you have an open role or just want to chat about AI, I'd love to hear from you.</p>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea class="full" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn-primary full">Send Message</button>
+      </form>
+      <div class="socials">
+        <a href="#" class="social-link" title="LinkedIn">in</a>
+        <a href="#" class="social-link" title="GitHub">gh</a>
+        <a href="#" class="social-link" title="Twitter">tw</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Ng Zi Le. Built with passion & AI.</p>
+  </footer>
+
+  <script>
+    function createShards() {
+      const container = document.getElementById('shard-container');
+      const shardCount = 15;
+      
+      for (let i = 0; i < shardCount; i++) {
+        const shard = document.createElement('div');
+        shard.classList.add('shard');
+        
+        const size = Math.random() * 60 + 20; 
+        const left = Math.random() * 100; 
+        const duration = Math.random() * 10 + 10; 
+        const delay = Math.random() * 10; 
+        
+        shard.style.width = `${size}px`;
+        shard.style.height = `${size * 1.5}px`;
+        shard.style.left = `${left}vw`;
+        shard.style.animationDuration = `${duration}s`;
+        shard.style.animationDelay = `${delay}s`;
+        
+        const p1 = Math.random() * 40 + 30; 
+        const p2 = Math.random() * 40 + 60; 
+        const p3 = Math.random() * 40 + 60; 
+        const p4 = Math.random() * 40;      
+        const p5 = Math.random() * 40;      
+        shard.style.clipPath = `polygon(${p1}% 0%, ${p2}% 25%, ${p3}% 90%, ${p4}% 100%, ${p5}% 40%)`;
+        
+        container.appendChild(shard);
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', createShards);
+  </script>
+</body>
+</html>
