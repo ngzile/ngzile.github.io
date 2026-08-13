@@ -25,14 +25,21 @@
 
     html { scroll-behavior: smooth; }
 
-    body {
+       body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg);
-      background-image: linear-gradient(rgba(4, 13, 27, 0.85), rgba(4, 13, 27, 0.85));
+      /* Add your image URL below, keeping the linear-gradient as a dark overlay */
+      background-image: 
+        linear-gradient(rgba(4, 13, 27, 0.85), rgba(4, 13, 27, 0.85)),
+        url(''); 
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* This keeps the background still while scrolling */
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
     }
+
 
     a { color: var(--accent-lg); text-decoration: none; transition: color .2s; }
     a:hover { color: #bdd8ff; }
