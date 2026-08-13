@@ -1,12 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Automation Intern | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -27,19 +25,22 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      /* Claude / Anthropic UI Font Stack */
+      font-family: "Söhne", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial;
       background-color: var(--bg);
       /* Add your background image url inside the url('') below */
       background-image: 
         linear-gradient(rgba(5, 5, 5, 0.90), rgba(5, 5, 5, 0.90)),
-        url('YOUR-BACKGROUND-IMAGE.jpg'); 
+        url('andrew-kliatskyi-tGpISgms6Yw-unsplash.jpg'); 
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       color: var(--text);
       line-height: 1.7;
-      font-size: 18px; /* Increased base font size */
+      font-size: 18px;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     a { color: var(--text); text-decoration: none; transition: color .2s; }
@@ -64,7 +65,7 @@
     }
 
     .logo {
-      font-weight: 800; font-size: 1.4rem;
+      font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px;
       background: linear-gradient(135deg, #ffffff, #777777);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
@@ -86,7 +87,7 @@
     }
 
     .section-title {
-      font-size: 2.6rem; font-weight: 800; line-height: 1.25;
+      font-size: 2.6rem; font-weight: 700; line-height: 1.25; letter-spacing: -0.5px;
       margin-bottom: 32px; color: #ffffff;
     }
 
@@ -103,17 +104,9 @@
     }
     .hero-badge span { color: var(--text); font-weight: 500; }
 
-    /* Profile Image Styling */
-    .profile-img {
-      width: 180px; height: 180px; border-radius: 50%; object-fit: cover;
-      border: 3px solid var(--border); box-shadow: 0 8px 32px var(--glow);
-      margin-bottom: 32px; transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-    .profile-img:hover { transform: translateY(-4px); border-color: #ffffff; }
-
     .hero h1 {
       font-size: clamp(2.8rem, 6vw, 4.5rem);
-      font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: #ffffff;
+      font-weight: 700; line-height: 1.15; letter-spacing: -1px; margin-bottom: 24px; color: #ffffff;
     }
     .hero h1 .gradient {
       background: linear-gradient(135deg, #ffffff, #666666);
@@ -125,8 +118,9 @@
 
     .btn {
       display: inline-flex; align-items: center; gap: 10px;
-      padding: 16px 36px; border-radius: 12px; font-size: 1.1rem; font-weight: 600;
+      padding: 16px 36px; border-radius: 12px; font-size: 1.1rem; font-weight: 500;
       border: none; cursor: pointer; transition: transform .15s, box-shadow .25s, background .2s;
+      font-family: inherit;
     }
     .btn:hover { transform: translateY(-2px); }
 
@@ -142,7 +136,7 @@
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
     .about-text { color: var(--muted); font-size: 1.15rem; }
     .about-text p + p { margin-top: 20px; }
-    .about-text strong { color: #ffffff; }
+    .about-text strong { color: #ffffff; font-weight: 600; }
 
     .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .skill-chip {
@@ -170,9 +164,9 @@
       border: 1px solid #333333;
     }
 
-    .project-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: #ffffff; }
+    .project-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: #ffffff; }
     .project-card p  { color: var(--muted); font-size: 1.05rem; margin-bottom: 24px; }
-    .project-link { font-size: 0.95rem; font-weight: 600; color: var(--text); border-bottom: 1px solid transparent; }
+    .project-link { font-size: 0.95rem; font-weight: 500; color: var(--text); border-bottom: 1px solid transparent; }
     .project-link:hover { border-bottom-color: var(--text); }
 
     .contact-wrapper {
@@ -190,7 +184,7 @@
     .contact-form textarea {
       width: 100%; padding: 16px 20px; background: var(--surface);
       border: 1px solid var(--border); border-radius: 12px; color: var(--text);
-      font-family: 'Inter', sans-serif; font-size: 1.05rem; outline: none; transition: border-color .2s;
+      font-family: inherit; font-size: 1.05rem; outline: none; transition: border-color .2s;
     }
     .contact-form input:focus,
     .contact-form textarea:focus { border-color: #ffffff; }
@@ -282,9 +276,6 @@
 
   <section class="hero">
     <div class="hero-badge">🤖 <span>Open to Internship Opportunities</span></div>
-    
-    <!-- Profile Image (Update 'profile.jpg' to your actual image file name) -->
-    <img src="profile.jpg" alt="Ng Zi Le" class="profile-img" />
     
     <h1>Hi, I'm <span class="gradient">NG ZI LE</span>.<br/>I am a frontend developer.</h1>
     <p>Aspiring AI Automation specialist passionate about streamlining workflows, prompt engineering, and building intelligent solutions that save time and effort.</p>
@@ -415,3 +406,4 @@
   </script>
 </body>
 </html>
+
